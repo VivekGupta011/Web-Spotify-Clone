@@ -1,0 +1,13 @@
+.app-container {
+  height: 100vh;
+  background-color: black;
+
+  &.album-route .main-content {
+    height: 100%;  // When the route is an album route
+  }
+
+  .main-content {
+    height: 90%;   // Default height
+    display: flex;
+  }
+}

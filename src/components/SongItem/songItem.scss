@@ -1,0 +1,25 @@
+.song-item {
+  min-width: 180px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15); 
+  }
+
+  img {
+    border-radius: 0.25rem;
+  }
+
+  .name {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .desc {
+    color: #94a3b8; 
+    font-size: 0.875rem;
+  }
+}

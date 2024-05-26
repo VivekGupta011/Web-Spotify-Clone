@@ -1,0 +1,135 @@
+.album-container {
+    .album-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+  
+      .album-image {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 8px;
+      }
+  
+      .album-details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        .playlist-label {
+          font-weight: bold;
+        }
+  
+        .album-name {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+  
+        .album-description {
+          font-size: 14px;
+        }
+  
+        .album-info-text {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+  
+          .spotify-logo {
+            width: 20px;
+            padding-right: 5px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    
+  
+    .clock-icon {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .song-list {
+      margin-top: 20px;
+  
+      .grid-header {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px;
+        margin-bottom: 20px;
+  
+        .header-item {
+          font-weight: bold;
+        }
+      }
+  
+      .song-item {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px;
+        padding: 10px;
+        align-items: center;
+        color: #a7a7a7;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #ffffff2b;
+        }
+  
+        .song-index {
+          color: #a7a7a7;
+          margin-right: 10px;
+        }
+  
+        .song-image {
+          width: 75px;
+          border-radius: 100px;
+          margin-right: 10px;
+        }
+  
+        .song-name {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: #ffffff;
+  
+          &:hover {
+            color: #a7a7a7;
+          }
+        }
+  
+        .album-name,
+        .date-added,
+        .song-duration {
+          color: #a7a7a7;
+        }
+      }
+    }
+  
+    @media (max-width: 767px) {
+        .album-info {
+          .album-image {
+            max-width: 100%;
+          }
+    
+          .album-details {
+            .album-name {
+              font-size: 18px;
+            }
+    
+            .album-description {
+              font-size: 12px;
+            }
+          }
+    
+          .album-info-text {
+            display: none !important;
+          }
+        }
+      }
+    }
+  

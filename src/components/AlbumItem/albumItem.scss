@@ -1,0 +1,10 @@
+$bg-color: aqua;
+$text-color: rgb(111, 77, 191);
+
+.hello-album {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}

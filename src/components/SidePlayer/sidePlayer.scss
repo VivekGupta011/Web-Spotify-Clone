@@ -1,0 +1,131 @@
+.player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  border-radius: 8px;
+  color: white;
+
+  .track-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    .track-details {
+      width: 100%;
+      flex: 1;
+
+      .track-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-right: 1rem;
+      }
+      .track-description {
+        font-size: 16px;
+        margin-right: 1rem;
+      }
+    }
+
+    .track-image {
+      width: 480px;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+
+  .seek-bar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    .time {
+      font-size: 0.8rem;
+      margin: 0 0.5rem;
+    }
+
+    .seek-bg {
+      flex: 1;
+      position: relative;
+      height: 4px;
+      background-color: #4a4a4a;
+      cursor: pointer;
+
+      .seek-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #1db954;
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1rem;
+
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      z-index: 10;
+      width: 100px;
+      padding: 8px 0;
+
+      div {
+        padding: 8px 16px;
+        cursor: pointer;
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+
+    .control-icons {
+      display: flex;
+      gap: 1rem;
+
+      img {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .additional-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 1rem;
+    border-top: 1px solid #4a4a4a;
+
+    img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .volume-control {
+      flex: 1;
+      margin: 0 0.5rem;
+
+      hr {
+        height: 4px;
+        background-color: #4a4a4a;
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.custom-player-container {
+  height: 10%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0 1rem;
+
+  .track-info {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      width: 3rem;
+    }
+
+    .track-details {
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: auto;
+
+    .control-icons {
+      display: flex;
+      gap: 1rem;
+
+      img {
+        width: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    .seek-bar-container {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+
+      .seek-bg {
+        width: 60vw;
+        max-width: 500px;
+        background-color: #d1d5db; 
+        border-radius: 9999px; 
+        cursor: pointer;
+        position: relative;
+
+        .seek-bar {
+          height: 0.25rem;
+          border: none;
+          width: 0;
+          background-color: #065f46; 
+          border-radius: 9999px; 
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .time {
+        margin: 0;
+      }
+    }
+  }
+
+  .additional-controls {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.75;
+
+    img {
+      width: 1rem;
+    }
+
+    .volume-control {
+      width: 5rem;
+      background-color: #f8fafc;
+
+      hr {
+        height: 0.25rem;
+        background-color: #f8fafc; 
+        border-radius: 9999px; 
+        margin: 0;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .track-info {
+      display: flex;
+    }
+
+    .additional-controls {
+      display: flex;
+    }
+  }
+}
