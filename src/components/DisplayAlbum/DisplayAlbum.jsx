@@ -11,10 +11,27 @@ const DisplayAlbum = () => {
   const { playWithId } = useContext(PlayerContext);
   const albumData = albumsData[id];
   const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const songsPerPage = 10;
 
   const filteredSongs = songsData.filter((song) =>
     song.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const totalPages = Math.ceil(filteredSongs.length / songsPerPage);
+
+  const displayedSongs = filteredSongs.slice(
+    (currentPage - 1) * songsPerPage,
+    currentPage * songsPerPage
+  );
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+  };
 
   return (
     <>
@@ -43,26 +60,44 @@ const DisplayAlbum = () => {
         </div>
       </div>
       <div className="album-container px-2">
-       
         <div className="song-list mt-4">
           <div className="grid-header"></div>
-          {filteredSongs.map((item, index) => (
+          {displayedSongs.map((item, index) => (
             <div
               onClick={() => playWithId(item.id)}
               className="song-item flex items-center py-4 cursor-pointer"
-              key={index}
+              key={item.id}
             >
               <p className="song-name flex items-center">
-                <b className="song-index mr-2">{index + 1}</b>
+                <b className="song-index mr-2">
+                  {(currentPage - 1) * songsPerPage + index + 1}
+                </b>
                 <img className="song-image mr-2" src={item.image} alt="" />
                 <div className="flex flex-col">
-                  <div> {item.name}</div>
+                  <div>{item.name}</div>
                   <div>{item.creator}</div>
                 </div>
               </p>
               <p className="song-duration ml-auto">{item.duration}</p>
             </div>
           ))}
+        </div>
+        {/* Pagination controls */}
+        <div className="pagination-controls flex justify-center mt-4 space-x-12 py-3">
+          <button
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}
+            className="px-4 py-2 mx-1 text-black bg-gray-300 rounded hover:bg-gray-400 disabled:bg-gray-200"
+          >
+            Previous
+          </button>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 mx-1 bg-gray-300 text-black rounded hover:bg-gray-400 disabled:bg-gray-200"
+          >
+            Next
+          </button>
         </div>
       </div>
     </>
